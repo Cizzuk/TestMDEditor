@@ -1,0 +1,88 @@
+* { box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
+:root {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  color-scheme: light;
+  --accent: #36F;
+  --bg: #FFF;
+    --bg-high: #ecf0fa;
+  --text: #383838;
+    --text-gray: #707070;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #4C8AFF;
+    --bg: #1a1a1a;
+      --bg-high: #2a2a2a;
+    --text: #FFF;
+      --text-gray: #B0B0B0;
+  }
+}
+html, body { background: var(--bg); color: var(--text); height: 100%; overflow: hidden; }
+header {
+  display: flex;
+  align-items: center;
+  padding: .5em 1em;
+  background: var(--bg-high);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.2);
+  position: sticky;
+  z-index: 1;
+  user-select: none;
+  --webkit-user-select: none;
+}
+header span {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-right: auto;
+}
+header button {
+  background: var(--bg);
+  border: none;
+  border-radius: 0.5em;
+  padding: .5em 1em;
+  margin: 0 .5em;
+  color: var(--text);
+  cursor: pointer;
+}
+header button:hover {
+  color: var(--accent);
+}
+#editor {
+  /* font-family: monospace; */
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1.5em 1em 50%;
+  outline: none;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: var(--bg);
+  color: var(--text);
+}
+.in { color: var(--text); }
+.out { color: var(--text-gray); font-family: monospace; }
+h1 { font-size: 1.8em; font-weight: 500; display: inline-block; }
+h2 { font-size: 1.6em; font-weight: 500; display: inline-block; }
+h3 { font-size: 1.4em; font-weight: 500; display: inline-block; }
+h4 { font-size: 1.2em; font-weight: 400; display: inline-block; }
+h5 { font-size: 1.1em; font-weight: 400; display: inline-block; }
+h6 { font-size: 1em;   font-weight: 400; display: inline-block; }
+.blockquote { color: var(--text-gray); }
+.blockquote.out, .ul.out, .ol.out { margin-inline-start: 1em; }
+.hr { color: var(--text-gray);border-bottom: 2px solid var(--bg-high); display: inline-block; margin-bottom: .5em; width: 100% }
+.code-block {
+  font-family: monospace;
+  background: var(--bg-high);
+  display: inline-block;
+  border-radius: .5em;
+  padding: .5em .7em 0;
+  margin: .5em 0;
+  width: 100%;
+}
+.inline-code { font-family: monospace; background: var(--bg-high); margin: 0 .1em; }
+.bold { font-weight: bold; }
+.link { color: var(--accent); text-decoration: underline; }
+.image { border-radius: 1em; margin: .5em; display: block; box-shadow: 0 2px 8px 0 rgba(0,0,0,.1); }
